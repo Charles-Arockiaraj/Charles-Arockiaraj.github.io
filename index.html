@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Charles Arockiaraj | Designer to Automation Engineer">
+<meta property="og:description" content="Mechanical designer turned automation engineer: Inventor scripting, Python scan alignment and AI workflows.">
+<title>Charles Arockiaraj</title>
+<meta name="description" content="Charles Arockiaraj — mechanical designer turned automation engineer. Inventor scripting, Python scan alignment and AI workflows that turn hours of manual work into minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: calm, editorial engineering portfolio. Navy ink + muted brass on a neutral stone ground.
+   Hero (name, Designer → Automation Engineer, story lede, key figures) → story in four steps → three case studies → toolkit → contact. */
+:root{
+  color-scheme:light;
+  --bg:#f5f6f7;
+  --surface:#ffffff;
+  --ink:#13202e;
+  --body-ink:#2c3a48;
+  --muted:#6a7785;
+  --line:#e2e6ea;
+  --brass:#a8834f;
+  --brass-soft:#f3ede3;
+  --navy:#13202e;
+  --navy-2:#1a2b3c;
+  --navy-line:#2a3d50;
+  --navy-text:#e9edf1;
+  --navy-muted:#9aa9b8;
+  --scan-a:#8fb4d8;
+  --scan-b:#d39a5c;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--body-ink);font-family:var(--body);font-size:17px;line-height:1.65;padding-inline:0;padding-block:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:28px}
+a{color:var(--ink)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{margin:0;font-family:var(--display);color:var(--ink);text-wrap:balance}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--body);padding:13px 22px;border-radius:6px;text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--brass);border-color:var(--brass)}
+.btn:not(.primary):hover{border-color:var(--brass);color:var(--brass)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:flex-end;align-items:center;gap:16px;padding-block:16px}
+.logo{font-family:var(--display);font-weight:700;font-stretch:115%;font-size:16px;letter-spacing:.16em;color:var(--ink);text-decoration:none}
+.logo span{color:var(--brass)}
+nav ul{display:flex;gap:32px;list-style:none;margin:0 auto 0 0;padding:0;font-size:14px;font-weight:600}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+nav .btn{padding:9px 16px;font-size:14px}
+
+/* hero */
+.hero{padding-block:88px 80px}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:64px;align-items:start}
+.hero-grid>*{min-width:0}
+.name{font-weight:800;font-stretch:118%;font-size:clamp(38px,6.3vw,80px);line-height:.92;letter-spacing:.005em;text-transform:uppercase;color:var(--ink)}
+.name span{display:inline}
+.name span+span{margin-left:.28em}
+@media (max-width:1100px){.name{font-size:clamp(38px,9vw,96px)}.name span{display:block}.name span+span{margin-left:0}}
+.shift{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-block:26px 48px;font-family:var(--display);font-weight:700;font-stretch:105%;font-size:clamp(20px,2.6vw,30px);letter-spacing:.06em;text-transform:uppercase}
+.shift .from{color:var(--muted)}
+.shift .line{flex:0 0 clamp(48px,7vw,96px);height:1px;background:var(--brass);position:relative}
+.shift .line::after{content:"";position:absolute;right:-1px;top:-4px;border:4.5px solid transparent;border-left:8px solid var(--brass);border-right:0}
+.shift .to{color:var(--ink)}
+.lede{font-size:clamp(18px,1.6vw,20px);line-height:1.7;max-width:58ch}
+.lede strong{color:var(--ink);font-weight:700}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.figures{background:var(--navy);color:var(--navy-text);border-radius:14px;padding:30px 30px 10px}
+.figures .eyebrow{color:var(--brass)}
+.figures dl{margin:16px 0 0}
+.figures dl>div{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:baseline;padding-block:16px;border-top:1px solid var(--navy-line)}
+.figures dl>div:first-child{border-top:0}
+.figures dt{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:34px;line-height:1;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap}
+.figures dt em{font-style:normal;color:var(--brass)}
+.figures dd{margin:0;font-size:15px;color:var(--navy-muted);line-height:1.4}
+
+/* story */
+.story{background:var(--surface);border-block:1px solid var(--line);padding-block:96px}
+.story-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:end;margin-bottom:60px}
+.story-head>*{min-width:0}
+.story h2,.section-head h2,.contact h2{font-weight:700;font-stretch:108%;font-size:clamp(32px,4.4vw,54px);line-height:1.04;letter-spacing:-.005em;margin-top:14px}
+.story-head p{color:var(--muted);font-size:18px;max-width:52ch}
+.chapters{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.chapter{border-top:2px solid var(--line);padding-top:22px;min-width:0}
+.chapter:nth-child(3),.chapter:nth-child(4){border-top-color:var(--brass)}
+.chapter .n{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.chapter h3{font-weight:700;font-stretch:104%;font-size:22px;margin-block:10px 10px}
+.chapter p{font-size:15.5px;color:var(--muted)}
+
+/* work */
+.work{padding-block:104px 56px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:52px}
+.section-head p{max-width:44ch;color:var(--muted)}
+.case{display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:36px;box-shadow:0 1px 2px rgba(19,32,46,.04),0 18px 40px -28px rgba(19,32,46,.25);scroll-margin-top:90px}
+.case>*{min-width:0}
+.case.flip .case-text{order:2}
+.case-text{padding:48px}
+.case-top{display:flex;align-items:center;gap:14px}
+.case-top .no{font-family:var(--mono);font-size:13px;color:var(--brass);border:1px solid var(--brass);border-radius:4px;padding:2px 8px}
+.case-top .area{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.case h3{font-weight:700;font-stretch:108%;font-size:clamp(26px,2.8vw,34px);line-height:1.1;margin-block:18px 26px}
+.psi{margin:0;display:grid;gap:18px}
+.psi div{display:grid;grid-template-columns:92px 1fr;gap:16px}
+.psi dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.psi dd{margin:0;font-size:16px}
+.psi dd strong{color:var(--ink);font-weight:700}
+.impact{margin-top:30px;padding:20px 22px;background:var(--bg);border-radius:10px;display:grid;gap:12px}
+.bar{display:grid;grid-template-columns:58px 1fr 80px;gap:14px;align-items:center;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.track{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.fill{height:100%;border-radius:99px;min-width:6px}
+.fill.b{background:#b9c2cb}
+.fill.a{background:var(--brass)}
+.bar .t{text-align:right}
+.bar .t.a{color:var(--ink);font-weight:500}
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;font-size:15px}
+.compare div{min-width:0}
+.compare div:last-child{color:var(--ink);font-weight:700}
+.compare span{color:var(--brass);font-family:var(--mono)}
+.case-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:28px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--mono);font-size:12px;padding:5px 10px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
+.code-link{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--brass);padding-bottom:1px}
+.code-link:hover{color:var(--brass)}
+.case-visual{background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:34px;min-height:420px;position:relative}
+.case-visual::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--navy-line) 1px,transparent 1.2px);background-size:22px 22px;opacity:.7;pointer-events:none}
+.case-visual>*{position:relative}
+.case-visual svg{display:block;width:100%;height:auto}
+.vcap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-muted)}
+.key{display:inline-flex;align-items:center;gap:6px;margin-right:14px}
+.key i{width:8px;height:8px;border-radius:50%}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px;border:1px solid var(--navy-line);color:var(--navy-muted);transition:color .3s,border-color .3s}
+.chip.ok{color:#9fd3b2;border-color:#3d6b52}
+#head{fill:var(--scan-b)}#glow{fill:var(--scan-b);opacity:.3}
+#scanCanvas{display:block;width:100%;aspect-ratio:4/3;max-width:100%}
+@media (prefers-reduced-motion: reduce){#head,#glow{display:none}}
+
+/* chat */
+.phone{max-width:330px;width:100%;margin:0 auto;background:#0e1823;border:1px solid var(--navy-line);border-radius:26px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
+.phone-top{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--navy-2);border-bottom:1px solid var(--navy-line)}
+.bot{width:34px;height:34px;border-radius:50%;background:var(--brass);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:500}
+.phone-top b{display:block;color:#fff;font-size:14px;line-height:1.2}
+.phone-top small{font-size:12px;color:#9fd3b2}
+.msgs{display:flex;flex-direction:column;gap:9px;padding:16px 12px 18px}
+.msg{max-width:86%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.45}
+.msg.me{align-self:flex-end;background:#2b4a66;color:#fff;border-bottom-right-radius:3px}
+.msg.r{align-self:flex-start;background:var(--navy-2);color:var(--navy-text);border-bottom-left-radius:3px;border:1px solid var(--navy-line)}
+.msg .m{font-family:var(--mono);font-size:12.5px;color:#e2c08f}
+.msg time{display:block;text-align:right;font-family:var(--mono);font-size:10px;opacity:.55;margin-top:2px}
+.flowline{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:20px;font-family:var(--mono);font-size:11px}
+.flowline span{padding:5px 10px;border-radius:4px;border:1px solid var(--navy-line);color:var(--navy-text)}
+.flowline i{font-style:normal;color:var(--brass);align-self:center}
+
+/* toolkit */
+.toolkit{padding-block:56px 104px}
+.tk{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tk>div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px;min-width:0}
+.tk h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:18px}
+.tk ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tk li{padding-block:11px;border-top:1px solid var(--line);font-weight:600;color:var(--ink);font-size:15.5px}
+.tk li:first-child{border-top:0;padding-top:0}
+.tk li small{display:block;font-weight:500;color:var(--muted);font-size:13.5px}
+
+/* contact */
+.contact{background:var(--navy);color:var(--navy-text);padding-block:104px}
+.contact h2{color:#fff;max-width:18ch}
+.contact p{font-size:18px;max-width:52ch;color:var(--navy-muted);margin-top:18px}
+.c-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;align-items:center}
+.addr{font-family:var(--mono);font-size:15px;padding:12px 18px;border-radius:6px;background:var(--navy-2);border:1px dashed var(--brass);color:#fff;user-select:all;overflow-wrap:anywhere}
+.contact .btn{border-color:var(--navy-line);color:#fff}
+.contact .btn.gold{background:var(--brass);border-color:var(--brass)}
+.contact .btn:hover{border-color:var(--brass);color:#fff;background:var(--navy-2)}
+.contact .btn.gold:hover{background:#b89262}
+footer{background:#0e1823;color:var(--navy-muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:24px}
+
+@media (max-width:920px){
+  nav ul{display:none}
+  .hero{padding-block:56px}
+  .hero-grid,.story-head{grid-template-columns:1fr;gap:36px}
+  .chapters{grid-template-columns:1fr 1fr}
+  .case,.case.flip{grid-template-columns:1fr}
+  .case.flip .case-text{order:0}
+  .case-text{padding:30px 24px}
+  .case-visual{min-height:0;padding:26px 20px}
+  .tk{grid-template-columns:1fr}
+  .story,.work,.contact{padding-block:68px}
+}
+@media (max-width:520px){
+  .wrap{padding-inline:16px}
+  .chapters{grid-template-columns:1fr;gap:26px}
+  .psi div{grid-template-columns:1fr;gap:2px}
+  .bar{grid-template-columns:50px 1fr 70px;gap:8px}
+  .compare{grid-template-columns:1fr}
+  .compare span{transform:rotate(90deg);justify-self:start}
+  .figures{padding:24px 22px 6px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <ul>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#toolkit">Toolkit</a></li>
+  </ul>
+  <a class="btn" href="#contact">Contact</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1 class="name"><span>Charles</span><span>Arockiaraj</span></h1>
+    <div class="shift" aria-label="From designer to automation engineer">
+      <span class="from">Designer</span><span class="line" aria-hidden="true"></span><span class="to">Automation Engineer</span>
+    </div>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="lede">For over seven years I have worked in mechanical design. Along the way I watched the same hours disappear into manual, repetitive work, so I started building tools to remove it. Today my automations turn <strong>half a day of cut-file prep into under 30 minutes</strong>, <strong>hours of scan alignment into under a minute</strong>, and <strong>a scroll through the stock sheet into a single chat message</strong>.</p>
+      <div class="btns">
+        <a class="btn primary" href="#work">View selected work</a>
+        <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+    <aside class="figures" aria-label="Key figures">
+      <div class="eyebrow">In numbers</div>
+      <dl>
+        <div><dt>7<em>+</em></dt><dd>years of mechanical design experience</dd></div>
+        <div><dt>8<em>×</em></dt><dd>faster laser cut file preparation</dd></div>
+        <div><dt>120<em>×</em></dt><dd>faster 3D scan alignment</dd></div>
+        <div><dt>1</dt><dd>chat message to check stock or price</dd></div>
+      </dl>
+    </aside>
+  </div>
+</header>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="story-head">
+      <div><div class="eyebrow">The story</div><h2>From designing parts to designing the process.</h2></div>
+      <p>Good design takes judgement. Much of the work around it does not. These four steps took me from the drawing board to building the tools that support it.</p>
+    </div>
+    <div class="chapters">
+      <div class="chapter"><div class="n">01 · 7+ YEARS</div><h3>The designer</h3><p>Working in mechanical design, sheet metal and manufacturing drawings in Autodesk Inventor, every working day.</p></div>
+      <div class="chapter"><div class="n">02 · THE BOTTLENECK</div><h3>Hours lost to clicks</h3><p>Half a day to prepare cut files. One to three hours to align scans. The same steps, by hand, every time.</p></div>
+      <div class="chapter"><div class="n">03 · THE SHIFT</div><h3>Writing the tools</h3><p>Inventor scripts and Python automations took those jobs down to minutes, with the same result every time.</p></div>
+      <div class="chapter"><div class="n">04 · NOW</div><h3>Automation engineer</h3><p>Connecting AI with everyday tools, like a chat assistant that answers stock questions from the inventory sheet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">Selected work</div><h2>Three automations</h2></div>
+      <p>Each one started as a task done by hand. Each one is now a tool the team relies on.</p>
+    </div>
+
+    <!-- 01 -->
+    <article class="case" id="cut">
+      <div class="case-text">
+        <div class="case-top"><span class="no">01</span><span class="area">Sheet metal · Manufacturing</span></div>
+        <h3>Laser Cut File Automation</h3>
+        <dl class="psi">
+          <div><dt>Problem</dt><dd>Every batch of parts had to be opened and cleaned up in <strong>AutoCAD</strong>, and the <strong>notches for the bending operator</strong> were drawn manually before the laser could cut it. It took around <strong>half a working day</strong>, and longer as the number of bends grew.</dd></div>
+          <div><dt>Solution</dt><dd>An <strong>Autodesk Inventor script</strong> that adds the bend notches, prepares the geometry and exports laser-ready files automatically, the same way every time.</dd></div>
+          <div><dt>Impact</dt><dd>The same batch is ready in <strong>under 30 minutes</strong>.</dd></div>
+        </dl>
+        <div class="impact" aria-label="Before about 4 hours, after under 30 minutes, drawn to scale">
+          <div class="bar"><span>Before</span><div class="track"><div class="fill b" style="width:100%"></div></div><span class="t">~4 h</span></div>
+          <div class="bar"><span>After</span><div class="track"><div class="fill a" style="width:12.5%"></div></div><span class="t a">&lt; 30 min</span></div>
+        </div>
+        <div class="case-foot">
+          <div class="tags"><span class="tag">AutoCAD</span><span class="tag">Inventor scripting</span><span class="tag">Sheet metal</span></div>
+          <a class="code-link" href="https://github.com/your-username/laser-cut-automation" target="_blank" rel="noopener">View code ↗</a>
+        </div>
+      </div>
+      <div class="case-visual">
+        <svg viewBox="0 0 400 290" role="img" aria-label="Flat pattern with bend lines, bend relief notches and the laser cut path">
+          <path id="cutpath" d="M60 50 H340 V94 L330 102 L340 110 V170 L330 178 L340 186 V230 H60 V186 L70 178 L60 170 V110 L70 102 L60 94 Z" fill="none" stroke="var(--scan-b)" stroke-width="2.2" stroke-linejoin="round"/>
+          <circle cx="120" cy="140" r="14" fill="none" stroke="var(--scan-b)" stroke-width="2.2"/>
+          <circle cx="280" cy="140" r="14" fill="none" stroke="var(--scan-b)" stroke-width="2.2"/>
+          <rect x="176" y="128" width="48" height="24" rx="12" fill="none" stroke="var(--scan-b)" stroke-width="2.2"/>
+          <g stroke="var(--scan-a)" stroke-width="1.2" stroke-dasharray="8 5">
+            <line x1="70" y1="102" x2="330" y2="102"/><line x1="70" y1="178" x2="330" y2="178"/>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--scan-a)" letter-spacing="1">
+            <text x="200" y="96" text-anchor="middle">BEND LINE 1</text>
+            <text x="200" y="196" text-anchor="middle">BEND LINE 2</text>
+          </g>
+          <g stroke="#e2c08f" stroke-width="1" fill="none">
+            <circle cx="335" cy="102" r="12"/><line x1="347" y1="96" x2="372" y2="78"/>
+            <circle cx="65" cy="178" r="12"/><line x1="53" y1="186" x2="30" y2="210"/>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#e2c08f" letter-spacing="1">
+            <text x="374" y="74" text-anchor="end">NOTCH</text>
+            <text x="26" y="224">NOTCH</text>
+          </g>
+          <g stroke="var(--navy-muted)" stroke-width="1" fill="var(--navy-muted)">
+            <line x1="60" y1="256" x2="340" y2="256"/><line x1="60" y1="238" x2="60" y2="262"/><line x1="340" y1="238" x2="340" y2="262"/>
+            <path d="M60 256 l7 -3 v6 z"/><path d="M340 256 l-7 -3 v6 z"/>
+          </g>
+          <text x="200" y="278" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--navy-muted)">FLAT PATTERN · 280.0 mm</text>
+          <circle id="glow" r="9"/><circle id="head" r="4"/>
+        </svg>
+        <div class="vcap"><span><span class="key"><i style="background:var(--scan-b)"></i>Cut path</span><span class="key"><i style="background:var(--scan-a)"></i>Bend line</span></span><span>Generated by script</span></div>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="case flip" id="scan">
+      <div class="case-text">
+        <div class="case-top"><span class="no">02</span><span class="area">3D scanning · Inspection</span></div>
+        <h3>Automatic Scan Alignment</h3>
+        <dl class="psi">
+          <div><dt>Problem</dt><dd>3D scans had to be lined up by hand, picking matching points and nudging them into place <strong>by eye</strong>. One job took <strong>1 to 3 hours</strong>, depending on the number of scans.</dd></div>
+          <div><dt>Solution</dt><dd>A <strong>Python</strong> automation that takes two 3D scans and aligns them with <strong>high-accuracy, 1:1 alignment</strong>.</dd></div>
+          <div><dt>Impact</dt><dd>Alignment finishes in <strong>under a minute</strong>, so scans are usable the same day they are captured.</dd></div>
+        </dl>
+        <div class="impact" aria-label="Before about 2 hours, after under 1 minute, drawn to scale">
+          <div class="bar"><span>Before</span><div class="track"><div class="fill b" style="width:100%"></div></div><span class="t">~2 h</span></div>
+          <div class="bar"><span>After</span><div class="track"><div class="fill a" style="width:.83%"></div></div><span class="t a">&lt; 1 min</span></div>
+        </div>
+        <div class="case-foot">
+          <div class="tags"><span class="tag">Python</span><span class="tag">3D scans</span><span class="tag">Point clouds</span></div>
+          <a class="code-link" href="https://github.com/your-username/scan-alignment" target="_blank" rel="noopener">View code ↗</a>
+        </div>
+      </div>
+      <div class="case-visual">
+        <canvas id="scanCanvas" role="img" aria-label="Two partial 3D scans of a flanged part moving into 1:1 alignment"></canvas>
+        <div class="vcap"><span><span class="key"><i style="background:var(--scan-a)"></i>Scan 1 · reference</span><span class="key"><i style="background:var(--scan-b)"></i>Scan 2</span></span><span class="chip ok" id="alignChip">1:1 aligned</span></div>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="case" id="chat">
+      <div class="case-text">
+        <div class="case-top"><span class="no">03</span><span class="area">AI · Operations</span></div>
+        <h3>Inventory Chat Assistant</h3>
+        <dl class="psi">
+          <div><dt>Problem</dt><dd>Stock levels and prices live in a Google Sheet. Checking one item meant opening it, searching and <strong>scrolling through rows</strong>, which is slow on a phone.</dd></div>
+          <div><dt>Solution</dt><dd>A RAG assistant built in <strong>n8n</strong> that reads the inventory sheet and answers questions sent on <strong>WhatsApp or Telegram</strong>.</dd></div>
+          <div><dt>Impact</dt><dd>Anyone on the team gets a price or stock quantity by sending <strong>one message</strong>.</dd></div>
+        </dl>
+        <div class="impact">
+          <div class="compare"><div>Open the sheet, search, scroll</div><span aria-hidden="true">→</span><div>Ask in chat, get the answer</div></div>
+        </div>
+        <div class="case-foot">
+          <div class="tags"><span class="tag">n8n</span><span class="tag">RAG</span><span class="tag">Google Sheets</span><span class="tag">WhatsApp</span><span class="tag">Telegram</span></div>
+          <a class="code-link" href="https://github.com/your-username/inventory-rag-assistant" target="_blank" rel="noopener">View workflow ↗</a>
+        </div>
+      </div>
+      <div class="case-visual">
+        <div class="phone" aria-label="Example conversation with the inventory bot">
+          <div class="phone-top"><div class="bot">INV</div><div><b>Inventory Assistant</b><small>online</small></div></div>
+          <div class="msgs">
+            <div class="msg me">How many M8 × 25 hex bolts do we have?<time>09:14</time></div>
+            <div class="msg r">M8 × 25 hex bolt, zinc plated<br><span class="m">In stock: 340 pcs</span><time>09:14</time></div>
+            <div class="msg me">Price of 2 mm MS sheet?<time>09:15</time></div>
+            <div class="msg r">MS sheet 2 mm, 1220 × 2440<br><span class="m">AED 185 / sheet · 12 in stock</span><time>09:15</time></div>
+          </div>
+        </div>
+        <div class="flowline"><span>WhatsApp / Telegram</span><i>→</i><span>n8n</span><i>→</i><span>Inventory search</span><i>→</i><span>AI reply</span></div>
+        <div class="vcap" style="justify-content:center"><span>Example chat · sample items</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="toolkit" id="toolkit">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">Toolkit</div><h2>Design meets code</h2></div>
+      <p>The design background shows me what to automate. The automation skills let me build it.</p>
+    </div>
+    <div class="tk">
+      <div><h4>Mechanical design</h4><ul>
+        <li>Autodesk Inventor<small>Parts, assemblies and drawings</small></li>
+        <li>Sheet metal<small>Flat patterns, bends and laser cutting</small></li>
+        <li>3D scanning<small>Capture, alignment and inspection</small></li>
+      </ul></div>
+      <div><h4>Automation &amp; code</h4><ul>
+        <li>Autodesk Inventor scripting<small>Notching, geometry prep and export</small></li>
+        <li>Python<small>3D scan alignment and point clouds</small></li>
+        <li>n8n<small>Workflow automation</small></li>
+      </ul></div>
+      <div><h4>AI &amp; integration</h4><ul>
+        <li>RAG assistants<small>Answers from company data</small></li>
+        <li>Google Sheets<small>As a live data source</small></li>
+        <li>WhatsApp &amp; Telegram bots<small>Answers where the team already chats</small></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Have a task that takes up your team's day?</h2>
+    <p>I am interested in roles where mechanical design and automation meet. If your team loses hours to repetitive work, let's talk.</p>
+    <div class="c-row">
+      <span class="addr" id="email">you@example.com</span>
+      <button class="btn gold" id="copyBtn" type="button">Copy email</button>
+      <a class="btn" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Charles Arockiaraj</span><span>Designer → Automation Engineer</span></div></footer>
+
+<script>
+// copy email
+document.getElementById('copyBtn').addEventListener('click',function(){
+  var el=document.getElementById('email'),b=this;
+  function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Press Ctrl+C'}
+  try{navigator.clipboard.writeText(el.textContent).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},1600)},sel)}catch(e){sel()}
+});
+
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// laser head follows the cut path
+(function(){
+  if(reduce)return;
+  var p=document.getElementById('cutpath'),h=document.getElementById('head'),g=document.getElementById('glow'),L=p.getTotalLength(),t0=null;
+  function step(ts){if(!t0)t0=ts;var pt=p.getPointAtLength(((ts-t0)/9000*L)%L);
+    h.setAttribute('cx',pt.x);h.setAttribute('cy',pt.y);g.setAttribute('cx',pt.x);g.setAttribute('cy',pt.y);requestAnimationFrame(step)}
+  requestAnimationFrame(step);
+})();
+
+// 3D scan alignment: two partial scans of a flanged pipe fitting
+(function(){
+  var cv=document.getElementById('scanCanvas'),ctx=cv.getContext('2d'),chip=document.getElementById('alignChip');
+  var seed=11;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+  var R=46,H=120,FR=92,FT=16,holes=[0,1,2,3,4,5].map(function(i){var a=i*Math.PI/3+Math.PI/6;return[Math.cos(a)*70,Math.sin(a)*70]});
+  function inHole(x,z){for(var i=0;i<holes.length;i++){var dx=x-holes[i][0],dz=z-holes[i][1];if(dx*dx+dz*dz<81)return true}return false}
+  function sample(n){var pts=[];while(pts.length<n){var u=rnd(),a=rnd()*Math.PI*2,p;
+      if(u<.45){var y=-H/2+FT+rnd()*(H-FT);p=[Math.cos(a)*R,y,Math.sin(a)*R]}            // pipe wall
+      else if(u<.55){var y2=-H/2+FT+rnd()*12;p=[Math.cos(a)*(R+10),y2,Math.sin(a)*(R+10)]}  // hub
+      else if(u<.85){var r=Math.sqrt(R*R+rnd()*(FR*FR-R*R));p=[Math.cos(a)*r,-H/2+FT,Math.sin(a)*r];if(inHole(p[0],p[2]))continue} // flange face
+      else{var y3=-H/2+rnd()*FT;p=[Math.cos(a)*FR,y3,Math.sin(a)*FR]}                      // flange rim
+      p.ang=Math.atan2(p[2],p[0]);pts.push(p)}return pts}
+  var all=sample(2600),A=[],B=[];
+  all.forEach(function(p){var deg=(p.ang*180/Math.PI+360)%360,noise=function(){return(rnd()-.5)*1.6};
+    var q=[p[0]+noise(),p[1]+noise(),p[2]+noise()];
+    if(deg<220)A.push(q);
+    if(deg>140||deg<10)B.push([p[0]+noise(),p[1]+noise(),p[2]+noise()]);
+  });
+  function rotY(p,a){var c=Math.cos(a),s=Math.sin(a);return[c*p[0]+s*p[2],p[1],-s*p[0]+c*p[2]]}
+  function rotX(p,a){var c=Math.cos(a),s=Math.sin(a);return[p[0],c*p[1]-s*p[2],s*p[1]+c*p[2]]}
+  function rotZ(p,a){var c=Math.cos(a),s=Math.sin(a);return[c*p[0]-s*p[1],s*p[0]+c*p[1],p[2]]}
+  var W,Hh,dpr;
+  function size(){dpr=Math.min(window.devicePixelRatio||1,2);W=cv.clientWidth;Hh=cv.clientHeight;cv.width=W*dpr;cv.height=Hh*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  size();addEventListener('resize',size);
+  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+  function draw(view,k){ // k: 0 = misaligned, 1 = aligned
+    ctx.clearRect(0,0,W,Hh);
+    var sc=Math.min(W,Hh)/250,cx=W/2,cy=Hh/2+6*sc,pts=[];
+    var off=[(1-k)*55,(1-k)*-30,(1-k)*20],ra=(1-k)*.55,rx=(1-k)*.35;
+    function push(p,col){var v=rotX(rotY(p,view),-.42);pts.push([v[0],v[1],v[2],col])}
+    A.forEach(function(p){push(p,0)});
+    B.forEach(function(p){var q=rotZ(rotX(p,rx),ra);push([q[0]+off[0],q[1]+off[1],q[2]+off[2]],1)});
+    pts.sort(function(a,b){return a[2]-b[2]});
+    for(var i=0;i<pts.length;i++){var p=pts[i],f=420/(420+p[2]),x=cx+p[0]*sc*f,y=cy-p[1]*sc*f,depth=Math.max(.25,Math.min(1,.62+p[2]/220));
+      ctx.globalAlpha=depth;ctx.fillStyle=p[3]?'#d39a5c':'#8fb4d8';ctx.fillRect(x-1.1,y-1.1,2.2,2.2)}
+    ctx.globalAlpha=1;
+  }
+  if(reduce){draw(.6,1);return}
+  var t0=null,last=null;
+  function loop(ts){if(!t0)t0=ts;var t=(ts-t0)/1000,cyc=t%7,k;
+    if(cyc<1.6)k=0;else if(cyc<4.2)k=ease((cyc-1.6)/2.6);else k=1;
+    var ok=k>=1;if(ok!==last){chip.textContent=ok?'1:1 aligned':'Aligning…';chip.classList.toggle('ok',ok);last=ok}
+    draw(.6+t*.25,k);requestAnimationFrame(loop)}
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
